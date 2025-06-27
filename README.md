@@ -1,6 +1,7 @@
 # perceptron999
 
 Простой офлайн транскрибатор речи на русском языке с использованием библиотеки [Vosk](https://github.com/alphacep/vosk-api).
+Для лучшего качества рекомендуется использовать большую русскую модель Vosk `vosk-model-ru-0.22`.
 
 ## Требования
 
@@ -14,7 +15,7 @@
 pip install vosk
 ```
 
-Модели Vosk можно загрузить с сайта <https://alphacephei.com/vosk/models>. Для русскоязычных записей подойдет модель `vosk-model-small-ru` или более крупные варианты.
+Модели Vosk можно загрузить с сайта <https://alphacephei.com/vosk/models>. Для наилучшего распознавания русской речи используйте модель `vosk-model-ru-0.22` (около 1.8&nbsp;ГБ).
 
 ## Использование
 
@@ -23,6 +24,8 @@ pip install vosk
 
 ```bash
 python transcriber.py path/to/audio.wav path/to/model -o output.txt
+# или, если модель распакована в папку `model` рядом со скриптом:
+python transcriber.py path/to/audio.wav -o output.txt
 ```
 
 Результат распознавания будет сохранен в файл `output.txt`. Если параметр `-o` не указан, текст будет выведен в консоль.
